@@ -308,7 +308,7 @@ class Menu():
         kLabel.grid(column = 1, row = 4)
         kLabel.config(bg = "firebrick1")
 
-        TflagLabel = Label(self.root, text = "T")
+        TflagLabel = Label(self.root, text = "T[°F]")
         TflagLabel.grid(column = 0, row = 5)
         
         TfLabel = Label(self.root, textvariable = self.Tf)
@@ -337,6 +337,8 @@ class Menu():
 
             pVal = float(self.P.get())
             tVal = float(self.T.get())
+            tVal = (tVal * 1.8) + 32
+            pVal = (pVal/0.006895)
 
             if re.search("Metano", resul):
 
